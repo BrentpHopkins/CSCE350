@@ -1,9 +1,25 @@
+/**
+ * @file Locker_Doors_Hopkins_Brent.cpp
+ * @author Brent Hopkins
+ * @version 0.1
+ * @date 2022-09-07
+ *
+ * @copyright Copyright (c) 2022 Brent Peter Hopkins
+ *
+ */
 #include <iostream>
 #include <array>
 #include <vector>
 
 using namespace std;
-
+/**
+ * @brief Checks if arguments are valid positive ints
+ *
+ * @param args argv
+ * @param argcount argc
+ * @return true the arguments passed are valid non negative ints
+ * @return false the arguments passed are not ints or negative ints
+ */
 bool ValidInts(char *args[], int argcount)
 {
     for (int i = 1; i < argcount; i++)
@@ -15,7 +31,11 @@ bool ValidInts(char *args[], int argcount)
     }
     return true;
 }
-
+/**
+ * @brief Prints the status of each locker and the number of open lockers
+ *
+ * @param data Lokcers vector containing boolean values for each locker
+ */
 void PrintLockerStatus(vector<bool> data)
 {
     string status = "";
