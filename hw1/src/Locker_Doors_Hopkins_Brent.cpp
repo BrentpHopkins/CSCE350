@@ -20,7 +20,7 @@ void PrintLockerStatus(vector<bool> data)
 {
     string status = "";
     int openCount = 0;
-    for (int i = 0; i < data.size(); i++)
+    for (size_t i = 0; i < data.size(); i++)
     {
         if (data[i])
         {
@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
     }
     else
     {
-        const int SIZE = stoi(argv[1]);
-        const int LOOPS = stoi(argv[2]);
-        vector<bool> lockers(SIZE);
+        long unsigned int size = stoi(argv[1]);
+        long unsigned int loops = stoi(argv[2]);
+        vector<bool> lockers(size);
         fill(lockers.begin(), lockers.end(), false);
 
-        for (int i = 1; i < LOOPS; i++)
+        for (size_t i = 1; i <= loops; i++)
         {
-            for (int j = 0; j < lockers.size(); j++)
+            for (size_t j = 0; j < (lockers.size()); j++)
             {
                 if ((j + 1) % i == 0)
                 {
