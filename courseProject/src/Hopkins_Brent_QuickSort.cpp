@@ -70,13 +70,13 @@ vector<double> readFile(string filename)
     }
     else
     {
-        cout << "Error opening input file: " << filename << endl;
+        cout << "Error opening inputfile: Please provide a valid file path " << filename << endl;
     }
     input.close();
     return rv;
 }
 
-void writetoFile(string outputfile, vector<double> &arr)
+void writetoFile(string outputfile, vector<double> &arr, double executionTime)
 {
     ofstream output(outputfile);
     string outString = to_string(arr[0]);
@@ -87,39 +87,23 @@ void writetoFile(string outputfile, vector<double> &arr)
     if (output.is_open())
     {
         output << outString << endl;
+        output << to_string(arr.size()) + "\t" + to_string(executionTime) << endl;
     }
     else
     {
-        cout << "Error opening outputfile: " << outputfile << endl;
+        cout << "Error opening output folder: Please provide a valid file path " << outputfile << endl;
     }
     output.close();
-}
-
-double *Random(int min, int max, int count)
-{
-    double *arr = new double[count + 1];
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_real_distribution<> dis(min, max);
-
-    for (int i = 0; i < count; i++)
-    {
-        arr[i] = dis(gen);
-    }
-    return arr;
 }
 
 int main(int argc, char *argv[])
 {
     vector<double> arr;
-    // string input = argv[1];
-    // string outPut = argv[2];
-    //  double *arr;
-    //   double arr[] = {-1, 5, 7, 12, 5.5, 4.5, 12, 5, 2, 1, -5, 12, 15};
-    //   int high = sizeof(arr) / sizeof(arr[0]) - 1;
-    //   cout << QuickSort(arr, 0, high) << std::endl;
-    arr = readFile("../data/input.txt");
-    QuickSort(arr, 0, arr.size() - 1);
-    writetoFile("../data/output.txt", arr);
+    string input = "../data/input.txt";
+    string outPut = "../data/output.txt";
+    double exeTime;
+    arr = readFile(input);
+    exeTime = QuickSort(arr, 0, arr.size() - 1);
+    writetoFile(outPut, arr, exeTime);
     return 0;
 }
