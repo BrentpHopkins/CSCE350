@@ -4,7 +4,12 @@
 #include <cmath>
 #include <fstream>
 using namespace std;
-
+/**
+ * @brief generates a vector of doubles
+ *
+ * @param count the number of doubles to be generated
+ * @return vector<double> a vector containing the random doubles
+ */
 vector<double> Random(int count)
 {
     vector<double> arr;
@@ -18,7 +23,12 @@ vector<double> Random(int count)
     }
     return arr;
 }
-
+/**
+ * @brief writes a vector of doubles to a provided output file
+ *
+ * @param outputfile the path of the file being written to
+ * @param arr the vector of doubles being written to the file
+ */
 void writetoFile(string outputfile, vector<double> &arr)
 {
     ofstream output(outputfile);
@@ -37,7 +47,11 @@ void writetoFile(string outputfile, vector<double> &arr)
     }
     output.close();
 }
-
+/**
+ * @brief generates inputs files containing random doubles
+ *
+ * @param count the numbe of items in the input file being generated
+ */
 void GenerateFiles(int count)
 {
     for (int i = 0; i < 25; i++)

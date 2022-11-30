@@ -1,0 +1,6 @@
+
+Input Size	Execution Time(AVG)
+
+10    0.010752ms
+100    0.119788ms
+1000    1.294760ms

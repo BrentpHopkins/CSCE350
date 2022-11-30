@@ -180,7 +180,7 @@ string GenerateExecutionTimeString(vector<result> arr)
     string out = "";
     for (int i = 0; i < arr.size(); i++)
     {
-        out = out + to_string(arr[i].count) + "    " + to_string(arr[i].time) + "\n";
+        out = out + to_string(arr[i].count) + "    " + to_string(arr[i].time) + "ms\n";
     }
     return out;
 }
@@ -199,7 +199,7 @@ string GenerateExecutionAverageString(vector<result> arr)
         avg = avg + arr[i].time;
     }
     avg = avg / arr.size();
-    return to_string(avg);
+    return to_string(avg) + "ms";
 }
 /**
  * @brief applies quicksort to the 25 input files generated for the specified input size

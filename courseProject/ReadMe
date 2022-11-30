@@ -1,0 +1,21 @@
+Compile:
+cd src
+make
+
+Running the Program:
+After the program is compiled there are two methods of running the program.
+
+    Method-1:
+    this method will generate 25 input files containing for each of the input sizes requested(10,100,1000), the text file containing individual run times, and a text file
+    containing the avg run time for each input size.
+
+        Ensure that there is a directory called data in the directory above src.
+        make generate_files
+        make process_files
+
+    Method-2:
+    this method allows you to provide an input and output file.
+        ./Hopkins_Brent_Quicksort InputFilePath OutputFilePath
+
+Clean Up:
+make clean will remove all text files in the data directory.
