@@ -1,6 +1,0 @@
-
-Input Size	Execution Time(AVG)
-
-10    0.010784
-100    0.143760
-1000    1.345740
