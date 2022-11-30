@@ -43,18 +43,15 @@ void GenerateFiles(int count)
     for (int i = 0; i < 25; i++)
     {
         vector<double> arr = Random(count);
-        string filename = "../data/output_" + to_string(count) + "_(" + to_string(i) + ").txt";
+        string filename = "../data/Input_" + to_string(count) + "_" + to_string(i) + ".txt";
         writetoFile(filename, arr);
     }
 }
 
 int main(int argc, char *argv[])
 {
-    int count = stoi(argv[1]);
-    if (count > 0)
-    {
-        GenerateFiles(count);
-    }
-
+    GenerateFiles(10);
+    GenerateFiles(100);
+    GenerateFiles(1000);
     return 0;
 }
